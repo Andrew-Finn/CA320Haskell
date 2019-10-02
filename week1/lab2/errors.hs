@@ -4,30 +4,25 @@
 -- errors one at a time by editing and saving this file, then
 -- reloading into GHCi.
 
-import Data.Char(chr,ord)
+import Data.Char (chr, ord)
 
 -- Here is a definition of a function that doesn't do anything very
 -- useful, but it does show you how to use a where clause.
-
-f :: (Int,Int) -> Int
-f x y = x<y
+f :: Int -> Int -> Int
+f x y 
    | x > 10     = max x y
-   | otherwise  = x - a
-   where a        = square (y+1)
-      square x = x * x
+   | otherwise  = x - y
+   where y = y * y
 
 -- Here is a function to give the next character in the Unicode sequence.
-
 next :: Char -> Char
-next c
-     = chr (ord c)+1
+next c = chr(ord c+1)
 
 -- Here is an attempt to write a definition of a function that adds one
 -- to its argument.
-
 increment :: Int -> Int
-increment x = x
-              where  x = x+1
+increment x = y
+   where  y = x+1
 
 -- Obviously this definition doesn't make sense!
 -- How can x possibly equal x+1?  That would mean 0==1 ...
