@@ -1,7 +1,7 @@
 isTriangle :: Float -> Float -> Float -> Bool
 isTriangle a b c 
-   | (a + b) /= c && (b + c) /= a && (c + a) /= b = False
-   | otherwise = True
+   | (a + b) > c && (b + c) > a && (c + a) > b = True
+   | otherwise = False
 
 -- Calculate the area of a triangle
 whatIsS :: Float -> Float -> Float -> Float
