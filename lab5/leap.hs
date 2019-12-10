@@ -1,4 +1,4 @@
-git data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
+data Day = Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday
     deriving (Enum, Show)
 
 data Month = Jan | Feb | Mar | Apr | May | Jun | Jul | Aug | Sep | Oct | Nov | Dec
