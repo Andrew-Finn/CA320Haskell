@@ -19,4 +19,4 @@ mLengths y = [31,feb,31,30,31,30,31,31,30,31,30,31]
 
 numDays :: Date -> Int
 numDays (d,m,y)
-    = d + sum(take(fromEnum m) (mLengths y)) + (y-1752) * 365 + length [yr | yr <- [1752..y-1], leap yr]
+    = d + sum(take(fromEnum m) (mLengths y)) + (y-1753) * 365 + length [yr | yr <- [1753..y-1], leap yr]
