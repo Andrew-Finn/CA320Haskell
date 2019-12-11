@@ -11,3 +11,12 @@ leap yr
    | yr `mod` 100 == 0 = yr `mod` 400 == 0
    | yr `mod` 4 == 0 = True
    | otherwise = False
+
+mLengths :: Int -> [Int]
+mLengths y = [31,feb,31,30,31,30,31,31,30,31,30,31]
+            where 
+            feb = if leap y then 29 else 28
+
+numDays :: Date -> Int
+numDays (d,m,y)
+    = d + sum(take(fromEnum m) (mLengths y)) + (y-1752) * 365 + length [yr | yr <- [1752..y-1], leap yr]
